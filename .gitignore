@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
+.vs/ravenous/FileContentIndex/81c8e8d5-6103-444a-96f0-64f4033c2f15.vsidx
+.vs/ravenous/v17/.wsuo
