@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 
 const sortByOptions = {
@@ -7,12 +7,33 @@ const sortByOptions = {
   "Most Reviewed": "review_count",
 };
 
-function SearchBar() {
+function SearchBar({ searchYelp }) {
+  const [term, setTerm] = useState("");
+  const [location, setLocation] = useState("");
+  const [sortBy, setSortBy] = useState(sortByOptions["Best Match"]);
+
   const renderSortByOptions = () => {
     return Object.keys(sortByOptions).map((sortByOption) => {
       let sortByOptionValue = sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      return (
+        <li
+          key={sortByOptionValue}
+          onClick={() => handleSortByChange(sortByOptionValue)}
+          className={sortBy === sortByOptionValue ? styles.active : ""}
+        >
+          {sortByOption}
+        </li>
+      );
     });
+  };
+
+  const handleSortByChange = (sortByOptionValue) => {
+    setSortBy(sortByOptionValue);
+  };
+
+
+  const handleSearch = () => {
+    searchYelp(term, location, sortBy);
   };
 
   return (
@@ -21,14 +42,22 @@ function SearchBar() {
         <ul>{renderSortByOptions()}</ul>
       </div>
       <div className={styles.SearchBarFields}>
-        <input placeholder="Search Businesses" />
-        <input placeholder="Where?" />
+        <input
+          placeholder="Search Businesses"
+          value={term}
+          onChange={(e) => setTerm(e.target.value)}
+        />
+        <input
+          placeholder="Where?"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
       </div>
       <div className={styles.SearchBarSubmit}>
-        <a>Let's Go</a>
+        <a onClick={handleSearch}>Let's Go</a>
       </div>
     </div>
   );
-};
+}
 
 export default SearchBar;
