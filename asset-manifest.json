@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Findr/static/css/main.265e38ca.css",
+    "main.js": "/Findr/static/js/main.6b1fe19c.js",
+    "static/js/787.9c5ccb23.chunk.js": "/Findr/static/js/787.9c5ccb23.chunk.js",
+    "static/media/background_search_desktop.jpg": "/Findr/static/media/background_search_desktop.5d22362af7aa3252eb5b.jpg",
+    "static/media/background_search_mobile.jpg": "/Findr/static/media/background_search_mobile.a6f8ee50c5c0c66a98c5.jpg",
+    "index.html": "/Findr/index.html",
+    "main.265e38ca.css.map": "/Findr/static/css/main.265e38ca.css.map",
+    "main.6b1fe19c.js.map": "/Findr/static/js/main.6b1fe19c.js.map",
+    "787.9c5ccb23.chunk.js.map": "/Findr/static/js/787.9c5ccb23.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.265e38ca.css",
+    "static/js/main.6b1fe19c.js"
+  ]
+}
