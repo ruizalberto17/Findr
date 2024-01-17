@@ -1,5 +1,5 @@
 const apiKey = process.env.REACT_APP_YELP_API_KEY;
-const cors = "https://thingproxy.freeboard.io/fetch/";
+const cors = "https://corsproxy.io/?";
 const baseUrl = "https://api.yelp.com/v3";
 const searchEndpoint = "/businesses/search";
 
