@@ -1,4 +1,4 @@
-const apiKey = "YOUR OWN API KEY";
+const apiKey = process.env.REACT_APP_YELP_API_KEY;
 const cors = "https://thingproxy.freeboard.io/fetch/";
 const baseUrl = "https://api.yelp.com/v3";
 const searchEndpoint = "/businesses/search";
@@ -24,7 +24,8 @@ const getSuggestions = async (keyword, location, sort) => {
                 address: `${business.location.display_address[0]}, ${business.location.display_address[1]}`,
                 category: business.categories[0].title,
                 rating: business.rating,
-                reviews: business.review_count
+                reviews: business.review_count,
+                url: business.url
             }));
             return results;
         }
