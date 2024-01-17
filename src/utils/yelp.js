@@ -1,11 +1,11 @@
 const apiKey = process.env.REACT_APP_YELP_API_KEY;
-const cors = "https://corsproxy.io/?";
+const cors = "";
 const baseUrl = "https://api.yelp.com/v3";
 const searchEndpoint = "/businesses/search";
 
 const getSuggestions = async (keyword, location, sort) => {
     var newLocation = location.replace(" ", '+');
-    const endpoint = `${cors}${baseUrl}${searchEndpoint}?term=${keyword}&location=${newLocation}&sort_by=${sort}`;
+    const endpoint = `https://corsproxy.io/?${baseUrl}${searchEndpoint}?term=${keyword}&location=${newLocation}&sort_by=${sort}`;
 
     try {
         const response = await fetch(endpoint,
